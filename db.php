@@ -4,8 +4,10 @@ define('SQL_USER',     'aircvx1');
 define('SQL_PASSWD',   '1qaz@WSX');
 $serverName = "demodbserver122.database.windows.net";
 
+
 $connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
-$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+//$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+$link = sqlsrv_connect($serverName, $connectionInfo);
 if (!$link) {
     die(print_r(sqlsrv_errors(), true));
 }
@@ -15,7 +17,8 @@ function InsertDB($tbname, $data)
 {
     //global $link;
     $connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
-    $link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    //$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    $link = sqlsrv_connect($serverName, $connectionInfo);
 
     $sql = "insert into $tbname";
     $t = "";
@@ -58,7 +61,8 @@ function UpdateDB($tbname, $data, $conditions = "")
 {
     //global $link;
     $connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
-    $link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    //$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    $link = sqlsrv_connect($serverName, $connectionInfo);
 
     $sql = "update $tbname set ";
     $t = "";
@@ -100,7 +104,8 @@ function DeleteDB($tbname, $conditions = "")
 {
     //global $link;
     $connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
-    $link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    //$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    $link = sqlsrv_connect($serverName, $connectionInfo);
 
     $sql = "delete from $tbname";
     if ($conditions != "") {
@@ -123,7 +128,8 @@ function SelectSqlDB($sql)
 {
     //global $link;
     $connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
-    $link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    //$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    $link = sqlsrv_connect($serverName, $connectionInfo);
     
     $rs = sqlsrv_query($link, $sql) or die(print_r(sqlsrv_errors(), true) . "<br>". $sql);
     $rst["sql"] = $sql;
