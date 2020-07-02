@@ -70,9 +70,9 @@ $Type = [
 */
 //資料類型
 $Type = [
-    "Security"    => "IR",
-    "Municipal"   => "MAG",
-    "People"      => "IOT",
+    "IR"    => "IR",
+    "MAG"   => "MAG",
+    "IOT"      => "IOT",
 
 ];
 
