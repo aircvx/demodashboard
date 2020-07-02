@@ -58,7 +58,7 @@ if (count($_POST) > 0) {
         }
     }
 }
-
+/*
 //資料類型
 $Type = [
     "Security"    => "安全資訊",
@@ -67,6 +67,15 @@ $Type = [
     "Information" => "資訊服務",
     "Monitor"     => "資訊監測",
 ];
+*/
+//資料類型
+$Type = [
+    "Security"    => "IR",
+    "Municipal"   => "MAG",
+    "People"      => "IOT",
+
+];
+
 
 foreach ($Type as $k => $v) {
     $rs = SelectSqlDB("select * from chart where type=N'".$v."' and isenable='1'");
