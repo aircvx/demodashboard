@@ -1,8 +1,8 @@
 <?php
-define('SQL_DB', 'Dashboard_PublicWeb');
-define('SQL_USER',     'publicwebadmin');
-define('SQL_PASSWD',   'kcgU61UL3103');
-$serverName = "10.250.250.175";
+define('SQL_DB', 'demodb');
+define('SQL_USER',     'aircvx1');
+define('SQL_PASSWD',   '1qaz@WSX');
+$serverName = "demodbserver122.database.windows.net";
 
 $connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
 $link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
