@@ -128,8 +128,8 @@ function SelectSqlDB($sql)
 {
     //global $link;
     $connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
-    //$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
-    $link = sqlsrv_connect($serverName, $connectionInfo);
+    $link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
+    //$link = sqlsrv_connect($serverName, $connectionInfo);
     
     $rs = sqlsrv_query($link, $sql) or die(print_r(sqlsrv_errors(), true) . "<br>". $sql);
     $rst["sql"] = $sql;
