@@ -2,10 +2,10 @@
 define('SQL_DB', 'demodb');
 define('SQL_USER',     'aircvx1');
 define('SQL_PASSWD',   '1qaz@WSX');
-$serverName = "demodbserver122.database.windows.net";
+$serverName = "tcp:demodbserver122.database.windows.net,1433";
 
-
-$connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
+$connectionInfo = array("UID" => "aircvx1", "pwd" => "1qaz@WSX", "Database" => "demodb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+//$connectionInfo = array("Database" => SQL_DB, "UID" => SQL_USER, "PWD" => SQL_PASSWD, "CharacterSet" => "UTF-8", 'ReturnDatesAsStrings' => 1);
 //$link = sqlsrv_connect(SQL_SERVER, $connectionInfo);
 $link = sqlsrv_connect($serverName, $connectionInfo);
 if (!$link) {
